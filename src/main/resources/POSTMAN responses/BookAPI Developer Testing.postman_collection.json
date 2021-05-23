@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "128891f5-e5c9-4e61-937e-9696cfa7c908",
+		"name": "BookAPI Developer Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create book",
+			"item": [
+				{
+					"name": "http://localhost:8090/book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"Kalki\",\r\n  \"classification\": \"FICTION\",\r\n  \"description\" : \"A story about zamindari \",\r\n  \"isbn\": \"SMI-3333\",\r\n  \"name\": \"SolaiMalai Ilavarasi\",\r\n  \"price\": 267.80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book"
+							]
+						},
+						"description": "create book"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "update book",
+			"item": [
+				{
+					"name": "http://localhost:8090/book/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"Kalki\",\r\n  \"classification\": \"FICTION\",\r\n  \"description\" : \"A story about zamindari in TamilNadu state\",\r\n  \"isbn\": \"SMI-3333\",\r\n  \"name\": \"SolaiMalai Ilavarasi\",\r\n  \"price\": 267.80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get book",
+			"item": [
+				{
+					"name": "http://localhost:8090/book/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get books",
+			"item": [
+				{
+					"name": "http://localhost:8090/books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8090/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete book",
+			"item": [
+				{
+					"name": "http://localhost:8090/book/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patch book",
+			"item": [
+				{
+					"name": "http://localhost:8090/book/2",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"author\": \"Satkhi\",\r\n  \"classification\": \"TRAVEL\",\r\n  \"description\" : \"Tells about the wars during the Rajendhira Cholan-I period\",\r\n  \"isbn\": \"CGM-4444\",\r\n  \"name\": \"CholaGangam\",\r\n  \"price\": 790.32\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Name not nullable and min 5 char",
+			"item": [
+				{
+					"name": "not null",
+					"item": [
+						{
+							"name": "http://localhost:8090/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"author\": \"Su Venkatesan\",\r\n  \"classification\": \"FICTION\",\r\n  \"description\": \"About Paari\",\r\n  \"isbn\": \"PAA-1111\",\r\n  \"name\": \"\",\r\n  \"price\": 3500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "min 5  char",
+					"item": []
+				},
+				{
+					"name": "http://localhost:8090/book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"Su Venkatesan\",\r\n  \"classification\": \"FICTION\",\r\n  \"description\": \"About Paari\",\r\n  \"isbn\": \"PAA-1111\",\r\n  \"name\": \"ggg\",\r\n  \"price\": 3500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Description is optional not more than 250 chars",
+			"item": [
+				{
+					"name": "decription is optional",
+					"item": [
+						{
+							"name": "http://localhost:8090/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"author\": \"Su Venkatesan\",\r\n  \"classification\": \"FICTION\",\r\n  \"description\": \"\",\r\n  \"isbn\": \"PAA-1111\",\r\n  \"name\": \"Velpaari\",\r\n  \"price\": 3500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "description not more than 250 characters",
+					"item": [
+						{
+							"name": "http://localhost:8090/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"author\": \"leeee\",\r\n  \"classification\": \"COMIC\",\r\n  \"description\": \"A comic book, also called comic magazine or (in the United Kingdom and Ireland) simply comic, is a publication that consists of comics art in the form of sequential juxtaposed panels that represent individual scenes. Panels are often accompanied by descriptive prose and written narrative, usually, dialogue contained in word balloons emblematic of the comics art form.\",\r\n  \"isbn\": \"COM-1113\",\r\n  \"name\": \"ChottaBeem\",\r\n  \"price\": 4867\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Price is mandatory and decimal",
+			"item": [
+				{
+					"name": "price is mandatory",
+					"item": [
+						{
+							"name": "http://localhost:8090/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"author\": \"gggggg\",\r\n  \"classification\": \"COMIC\",\r\n  \"description\": \"For girls\",\r\n  \"isbn\": \"COM-1114\",\r\n  \"name\": \"autograph\",\r\n  \"price\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "price should be decimal",
+					"item": [
+						{
+							"name": "http://localhost:8090/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"author\": \"gggggg\",\r\n  \"classification\": \"COMIC\",\r\n  \"description\": \"For kids\",\r\n  \"isbn\": \"COM-1114\",\r\n  \"name\": \"autograph\",\r\n  \"price\": \"67\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "isbn value validation",
+			"item": [
+				{
+					"name": "http://localhost:8090/book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"jjjjj\",\r\n  \"classification\": \"HEALTH\",\r\n  \"description\": \"MYSTERY\",\r\n  \"isbn\": \"AA-9999\",\r\n  \"name\": \"cccccc\",\r\n  \"price\": \"87.43\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book not found for invalid bookid",
+			"item": [
+				{
+					"name": "http://localhost:8090/book/9",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"jjjjj\",\r\n  \"classification\": \"TRAVEL\",\r\n  \"description\": \"MYSTERY\",\r\n  \"isbn\": \"HEA-1114\",\r\n  \"name\": \"cccccc\",\r\n  \"price\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/book/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"book",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
